@@ -6,7 +6,7 @@ class BankSystem(
     fun deposit(amount: Double) {
         println("Depositing: $amount...")
         if (account.deposit(amount)) {
-            println("New balance: ${account.getAccountBalance()}")
+            println("New balance: ${account.balance}")
         } else {
             println("Error, couldn't make a deposit with value: $amount")
         }
@@ -15,7 +15,7 @@ class BankSystem(
     fun withdraw(amount: Double) {
         println("Withdrawing: $amount...")
         if (account.withdraw(amount)) {
-            println("New balance: ${account.getAccountBalance()}")
+            println("New balance: ${account.balance}")
         } else {
             println("Error, couldn't make a withdraw with value: $amount")
         }
@@ -24,7 +24,7 @@ class BankSystem(
     fun applyInterest() {
         println("Applying interest...")
         if (account.applyInterest()) {
-            println("New Balance with Interest: ${account.getAccountBalance()}")
+            println("New Balance with Interest: ${account.balance}")
         } else {
             println("Error, couldn't make a interest")
         }

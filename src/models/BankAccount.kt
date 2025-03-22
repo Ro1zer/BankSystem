@@ -3,8 +3,10 @@ package models
 open class BankAccount(
     private val accountNumber: String,
     private val accountHolderName: String,
-    protected var balance: Double,
+    balance: Double,
 ) {
+    var balance = balance
+        protected set
 
     fun deposit(amount: Double): Boolean {
         if (amount > 0) {
@@ -21,8 +23,6 @@ open class BankAccount(
         }
         return false
     }
-
-    fun getAccountBalance(): Double = this.balance
 
     fun getAccountInfo(): String =
         "Account Number: $accountNumber\nAccount Holder: $accountHolderName\nBalance: $balance"
